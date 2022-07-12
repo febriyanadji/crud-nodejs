@@ -13,4 +13,4 @@ jobs:
       - name: push docker image
         run: docker push febriyanadji/crud-nodejs:latest
       - name: kubectl
-        run: kubectl version
+        run: kustomize
