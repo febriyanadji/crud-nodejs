@@ -1,7 +1,10 @@
-name: GitHub Actions Demo
-on: [push]
+name: Build and Deploy to GKE
+on:
+  push:
+    branches:
+      - master
 jobs:
-  build:
+  build-docker-image:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -12,10 +15,14 @@ jobs:
         run: docker build -t febriyanadji/crud-nodejs:latest .
       - name: push docker image
         run: docker push febriyanadji/crud-nodejs:latest
-  deploy:
+  deploy-to-production:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
+      - uses: google-github-actions/setup-gcloud
+        with:
+          service_account_key: ${{ secrets.GKE_SA_KEY }}
+          project_id: ${{ secrets.GKE_PROJECT }}
       - name: deploy to cluster
         run: kustomize build ./kubernetes | kubectl apply -f -
