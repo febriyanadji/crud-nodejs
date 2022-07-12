@@ -4,7 +4,7 @@ on:
     branches:
       - master
 jobs:
-  build-docker-image:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -15,11 +15,11 @@ jobs:
         run: docker build -t febriyanadji/crud-nodejs:latest .
       - name: push docker image
         run: docker push febriyanadji/crud-nodejs:latest
-  deploy-to-production:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
+      # deploy-to-production:
+      #   runs-on: ubuntu-latest
+      #   steps:
+      #     - name: Check out repository code
+      #       uses: actions/checkout@v3
       - uses: google-github-actions/setup-gcloud@v0
         with:
           service_account_key: ${{ secrets.GKE_SA_KEY }}
