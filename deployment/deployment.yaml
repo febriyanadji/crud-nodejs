@@ -14,8 +14,16 @@ spec:
       containers:
         - name: app
           image: febriyanadji/crud-nodejs:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
+          env:
+            - name: MONGODB_USERNAME
+              value: "adminuser"
+            - name: MONGODB_PASSWORD
+              value: "password123"
+            - name: MONGODB_HOST
+              value: "mongodb-svc"
 
 ---
 apiVersion: v1

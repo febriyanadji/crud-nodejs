@@ -8,15 +8,21 @@ import cors from 'cors';
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/crud', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  auth: {
-    username: 'root',
-    password: 'password',
-  },
-  authSource: 'admin',
-});
+mongoose.connect(
+  'mongodb://' +
+    process.env.MONGODB_HOST +
+    ':27017/' +
+    process.env.MONGODB_DBNAME,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    auth: {
+      username: process.env.MONGODB_USERNAME,
+      password: process.env.MONGODB_PASSWORD,
+    },
+    authSource: 'admin',
+  }
+);
 const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Database Connected'));
