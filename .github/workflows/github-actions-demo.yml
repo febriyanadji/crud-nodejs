@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -12,5 +12,10 @@ jobs:
         run: docker build -t febriyanadji/crud-nodejs:latest .
       - name: push docker image
         run: docker push febriyanadji/crud-nodejs:latest
-      - name: kubectl
-        run: kustomize
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: deploy to cluster
+        run: kustomize build ./kubernetes | kubectl apply -f -
