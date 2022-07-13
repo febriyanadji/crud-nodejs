@@ -35,5 +35,5 @@ spec:
   selector:
     app: crud-nodejs
   ports:
-    - port: 3000
+    - port: 3001
       targetPort: 3000
