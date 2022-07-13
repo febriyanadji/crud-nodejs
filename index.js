@@ -28,5 +28,5 @@ db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Database Connected'));
 app.use(cors());
 app.use(express.json());
-app.use('/products', route);
+app.use('/product', route);
 app.listen('3000', () => console.log('server running at port : 3000'));
