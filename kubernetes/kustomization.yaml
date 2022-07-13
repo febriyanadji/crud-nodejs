@@ -1,4 +1,5 @@
 resources:
   - mongodb.yaml
   - deployment.yaml
+  - ingress.yaml
 namePrefix: prod-
