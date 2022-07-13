@@ -10,5 +10,4 @@ spec:
         paths:
           - backend:
               serviceName: crud-nodejs
-                portNumber: 3000
-
+              portNumber: 3000
