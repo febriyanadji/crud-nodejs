@@ -12,9 +12,9 @@ jobs:
       - name: login to dockerhub registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - name: build docker image
-        run: docker build -t "febriyanadji/crud-nodejs:$GITHUB_SHA" .
+        run: docker build -t febriyanadji/crud-nodejs:$GITHUB_SHA .
       - name: push docker image
-        run: docker push "febriyanadji/crud-nodejs:$GITHUB_SHA"
+        run: docker push febriyanadji/crud-nodejs:$GITHUB_SHA
       # deploy-to-production:
       #   runs-on: ubuntu-latest
       #   steps:
@@ -33,5 +33,5 @@ jobs:
       - name: deploy to cluster
         run: |-
           cd ./kubernetes
-          kustomize edit set image febriyanadji/crud-nodejs="febriyanadji/crud-nodejs:$GITHUB_SHA"
+          kustomize edit set image febriyanadji/crud-nodejs=febriyanadji/crud-nodejs:$GITHUB_SHA
           kustomize build . | kubectl apply -f -
