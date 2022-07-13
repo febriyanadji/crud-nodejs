@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: crud-nodejs
 spec:
-  ingressClassName: nginx
+  # ingressClassName: nginx
   rules:
     - host: crud-nodejs.febriyan.my.id
       http:
