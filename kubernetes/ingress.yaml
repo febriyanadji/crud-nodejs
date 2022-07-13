@@ -3,12 +3,6 @@ kind: Ingress
 metadata:
   name: crud-nodejs
 spec:
-  # ingressClassName: nginx
-  defaultBackend:
-    service:
-      name: crud-nodejs
-      port:
-        number: 3000
   rules:
     - host: crud-nodejs.febriyan.my.id
       http:
