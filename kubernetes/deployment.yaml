@@ -23,7 +23,7 @@ spec:
             - name: MONGODB_PASSWORD
               value: "password123"
             - name: MONGODB_HOST
-              value: "mongo-svc"
+              value: mongo-svc
 
 ---
 apiVersion: v1
