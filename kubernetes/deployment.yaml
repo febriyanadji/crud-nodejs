@@ -31,8 +31,9 @@ kind: Service
 metadata:
   name: crud-nodejs
 spec:
+  type: LoadBalancer
   selector:
     app: crud-nodejs
   ports:
-    - port: 3000
+    - port: 80
       targetPort: 3000
