@@ -31,7 +31,6 @@ kind: Service
 metadata:
   name: crud-nodejs
 spec:
-  type: LoadBalancer
   selector:
     app: crud-nodejs
   ports:
