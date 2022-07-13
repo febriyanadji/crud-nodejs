@@ -12,7 +12,8 @@ jobs:
       - name: login to dockerhub registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - name: build docker image
-        run: docker build -t febriyanadji/crud-nodejs:${{ GITHUB_SHA }} .
+        run: |-
+          docker build -t "febriyanadji/crud-nodejs:$GITHUB_SHA" .
       - name: push docker image
         run: docker push febriyanadji/crud-nodejs:latest
       # deploy-to-production:
