@@ -2,4 +2,3 @@ resources:
   - mongodb.yaml
   - deployment.yaml
 namePrefix: prod-
-namespace: crud
