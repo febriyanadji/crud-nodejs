@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: crud-nodejs
@@ -8,6 +8,10 @@ spec:
     - host: crud-nodejs.febriyan.my.id
       http:
         paths:
-          - backend:
-              serviceName: crud-nodejs
-              portNumber: 3000
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: crud-nodejs
+                port:
+                  number: 3000
