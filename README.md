@@ -3,7 +3,6 @@
 [![Build and Deploy to Kubernetes](https://github.com/febriyanadji/crud-nodejs/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/febriyanadji/crud-nodejs/actions/workflows/github-actions-demo.yml)
 
 Author : Febriyan Adji Saputro
-postman url : https://documenter.getpostman.com/view/4794621/UzQvsQHT
 
 ## How to deploy on local machine for development purposes
 
@@ -30,3 +29,16 @@ kubectl get svc/crud-nodejs -n crud-nodejs
 ```
 
 Now, the API can be called from http://externalIP/
+
+## API Documentation
+
+Postman URL : https://documenter.getpostman.com/view/4794621/UzQvsQHT
+
+## API Login credentials
+
+| Username | Password | Admin |
+| -------- | -------- | ----- |
+| admin    | 123      | true  |
+| user1    | 123      | false |
+
+## Flow
