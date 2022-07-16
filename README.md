@@ -13,7 +13,7 @@ cd crud-nodejs/
 docker-compose up -d --build
 ```
 
-Access http://localhost:3000/
+Now, the API can be called from http://localhost:3000/
 
 ## How to deploy on Kubernetes Cluster
 
@@ -23,8 +23,10 @@ cd crud-nodejs/
 kubectl apply -k ./kubernetes
 ```
 
+Get the external IP :
+
 ```sh
 kubectl get svc/crud-nodejs -n crud-nodejs
 ```
 
-http://externalIP/
+Now, the API can be called from http://externalIP/
