@@ -45,4 +45,14 @@ Postman URL : https://documenter.getpostman.com/view/4794621/UzQvsQHT
 | admin    | 123      | true  |
 | user1    | 123      | false |
 
-## Flow
+## Login Flow
+
+POST request to /auth/login using username & password and get the access token
+
+use the access token as a Bearer Authorization Header to access protected endpoints
+
+## CRUD Flow
+
+Admin user has permission to Create Read Update Delete all users
+
+non-admin users only have permission to read their profile data via the /auth/me endpoint
