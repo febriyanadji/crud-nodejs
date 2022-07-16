@@ -16,6 +16,7 @@ import {
   MONGODB_PORT,
   MONGODB_USERNAME,
 } from './config.js';
+import { preStart } from './misc/index.js';
 
 const app = express();
 
@@ -33,7 +34,10 @@ mongoose.connect(
 );
 const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
-db.once('open', () => console.log('Database Connected'));
+db.once('open', () => {
+  console.log('Database Connected');
+  preStart();
+});
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
