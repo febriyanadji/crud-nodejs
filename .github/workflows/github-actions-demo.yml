@@ -18,6 +18,7 @@ jobs:
       - name: push latest docker image
         run: docker push febriyanadji/crud-nodejs:latest
   deploy-to-GKE:
+    needs: build-and-push-docker-image
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
