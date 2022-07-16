@@ -5,6 +5,8 @@ services:
       context: ./
       dockerfile: ./Dockerfile.dev
     restart: always
+    depends_on:
+      - mongodb
     environment:
       MONGODB_HOST: mongodb
       MONGODB_PORT: 27017

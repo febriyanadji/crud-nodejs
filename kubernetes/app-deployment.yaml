@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: crud-nodejs
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: crud-nodejs
