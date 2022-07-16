@@ -16,6 +16,13 @@ spec:
         - name: app
           image: febriyanadji/crud-nodejs
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "64m"
+            limits:
+              memory: "128Mi"
+              cpu: "128m"
           ports:
             - containerPort: 3000
           env:
