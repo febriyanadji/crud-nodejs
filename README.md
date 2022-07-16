@@ -8,7 +8,7 @@ Author : Febriyan Adji Saputro
 
 Run the following command :
 
-```sh
+```bash
 git clone https://github.com/febriyanadji/crud-nodejs
 cd crud-nodejs/
 docker-compose up -d --build
@@ -20,7 +20,7 @@ Now, the API can be called from http://localhost:3000/
 
 Run the following command :
 
-```sh
+```bash
 git clone https://github.com/febriyanadji/crud-nodejs
 cd crud-nodejs/
 kubectl apply -k ./kubernetes
@@ -28,7 +28,7 @@ kubectl apply -k ./kubernetes
 
 Get the external IP :
 
-```sh
+```bash
 kubectl get svc/crud-nodejs -n crud-nodejs
 ```
 
@@ -47,12 +47,12 @@ Postman URL : https://documenter.getpostman.com/view/4794621/UzQvsQHT
 
 ## Login Flow
 
-POST request to /auth/login using username & password and get the access token
+POST request to /auth/login using username & password and get the access token.
 
-use the access token as a Bearer Authorization Header to access protected endpoints
+Use the access token as a Bearer Authorization Header to access protected endpoints.
 
 ## CRUD Flow
 
-Admin user has permission to Create Read Update Delete all users
+Admin user has permission to Create Read Update Delete all users.
 
-non-admin users only have permission to read their own user data via the /auth/me endpoint
+Non-admin users only have permission to read their own user data via the /auth/me endpoint.
