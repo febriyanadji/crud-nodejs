@@ -1,4 +1,4 @@
-name: Build and Deploy to GKE
+name: Build and Deploy to Kubernetes
 on:
   push:
     branches:
@@ -17,7 +17,7 @@ jobs:
         run: docker push febriyanadji/crud-nodejs:$GITHUB_SHA
       - name: push latest docker image
         run: docker push febriyanadji/crud-nodejs:latest
-  deploy-to-GKE:
+  deploy-to-kubernetes:
     needs: build-and-push-docker-image
     runs-on: ubuntu-latest
     steps:
