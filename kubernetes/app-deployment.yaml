@@ -16,6 +16,18 @@ spec:
         - name: app
           image: febriyanadji/crud-nodejs
           imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            failureThreshold: 30
+            periodSeconds: 10
           resources:
             requests:
               memory: "64Mi"
