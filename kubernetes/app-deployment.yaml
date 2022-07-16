@@ -22,6 +22,8 @@ spec:
               value: "adminuser"
             - name: MONGODB_PASSWORD
               value: "password123"
+            - name: MONGODB_DBNAME
+              value: "crud-nodejs"
             - name: MONGODB_HOST
               value: mongo-svc
             - name: MONGODB_PORT
