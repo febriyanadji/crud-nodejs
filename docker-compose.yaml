@@ -1,5 +1,22 @@
 version: '3.7'
 services:
+  app:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile.dev
+    restart: always
+    environment:
+      MONGODB_HOST: mongodb
+      MONGODB_PORT: 27017
+      MONGODB_DBNAME: crud
+      MONGODB_USERNAME: root
+      MONGODB_PASSWORD: password
+      JWT_SECRET: ba4c37ab559f17a39c9f04c67a3d1fa2ef5c1e1637ea722af09b8e412b583995
+    volumes:
+      - './app:/usr/src/app'
+      # - './app/node_modules:/usr/src/app/node_modules'
+    ports:
+      - 3000:3000
   mongodb:
     image: mongo:4.4-bionic
     restart: always

@@ -24,16 +24,3 @@ spec:
               value: "password123"
             - name: MONGODB_HOST
               value: mongo-svc
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: crud-nodejs
-spec:
-  type: LoadBalancer
-  selector:
-    app: crud-nodejs
-  ports:
-    - port: 80
-      targetPort: 3000

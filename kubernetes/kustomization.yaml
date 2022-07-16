@@ -1,5 +1,7 @@
 resources:
-  - mongodb.yaml
-  - deployment.yaml
-  # - ingress.yaml
-# namePrefix: prod-
+  - mongodb-pvc.yaml
+  - mongodb-secret.yaml
+  - mongodb-deployment.yaml
+  - mongodb-service.yaml
+  - app-deployment.yaml
+  - app-service.yaml
