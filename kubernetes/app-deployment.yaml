@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
         - name: app
-          image: febriyanadji/crud-nodejs
+          image: febriyanadji/crud-nodejs:latest
           imagePullPolicy: Always
           livenessProbe:
             httpGet:
               path: /healthz
               port: 3000
             initialDelaySeconds: 3
-            periodSeconds: 1
+            periodSeconds: 3
           startupProbe:
             httpGet:
               path: /healthz
