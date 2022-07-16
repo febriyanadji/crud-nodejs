@@ -55,4 +55,4 @@ use the access token as a Bearer Authorization Header to access protected endpoi
 
 Admin user has permission to Create Read Update Delete all users
 
-non-admin users only have permission to read their profile data via the /auth/me endpoint
+non-admin users only have permission to read their own user data via the /auth/me endpoint
