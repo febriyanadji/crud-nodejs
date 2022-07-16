@@ -24,3 +24,7 @@ spec:
               value: "password123"
             - name: MONGODB_HOST
               value: mongo-svc
+            - name: MONGODB_PORT
+              value: "27017"
+            - name: JWT_SECRET
+              value: "80ae4771c1728065a70f0bca20c1bb2604ddeaae26138eff0663f911bd24ca19"
