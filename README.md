@@ -6,6 +6,8 @@ Author : Febriyan Adji Saputro
 
 ## How to deploy on local machine for development purposes
 
+Run the following command :
+
 ```sh
 git clone https://github.com/febriyanadji/crud-nodejs
 cd crud-nodejs/
@@ -15,6 +17,8 @@ docker-compose up -d --build
 Now, the API can be called from http://localhost:3000/
 
 ## How to deploy on Kubernetes Cluster
+
+Run the following command :
 
 ```sh
 git clone https://github.com/febriyanadji/crud-nodejs
