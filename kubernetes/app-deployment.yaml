@@ -19,9 +19,15 @@ spec:
             - containerPort: 3000
           env:
             - name: MONGODB_USERNAME
-              value: "adminuser"
+              valueFrom:
+                secretKeyRef:
+                  name: crud-nodejs-creds
+                  key: db_username
             - name: MONGODB_PASSWORD
-              value: "password123"
+              valueFrom:
+                secretKeyRef:
+                  name: crud-nodejs-creds
+                  key: db_password
             - name: MONGODB_DBNAME
               value: "crud-nodejs"
             - name: MONGODB_HOST
@@ -29,4 +35,7 @@ spec:
             - name: MONGODB_PORT
               value: "27017"
             - name: JWT_SECRET
-              value: "80ae4771c1728065a70f0bca20c1bb2604ddeaae26138eff0663f911bd24ca19"
+              valueFrom:
+                secretKeyRef:
+                  name: crud-nodejs-creds
+                  key: jwt_secret
