@@ -24,5 +24,11 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
