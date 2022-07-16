@@ -21,7 +21,7 @@ spec:
               path: /healthz
               port: 3000
             initialDelaySeconds: 3
-            periodSeconds: 3
+            periodSeconds: 1
           startupProbe:
             httpGet:
               path: /healthz
