@@ -38,7 +38,7 @@ Now, the API can be called from http://externalIP/
 
 Postman URL : https://documenter.getpostman.com/view/4794621/UzQvsQHT
 
-## API Login credentials
+## Default API Login credentials
 
 | Username | Password | Admin |
 | -------- | -------- | ----- |
