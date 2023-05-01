@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import swaggerUi from 'swagger-ui-express';
 
+
 import authRoute from './routes/authRoute.js';
 import userRoute from './routes/userRoute.js';
 import rootRoute from './routes/index.js';
